@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FlexTable</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="./js/flextable.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css">
+        <link href="./css/flextable.css" rel="stylesheet" />
+        <link href="./css/flexdemo.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <h2>Base Usage</h2>
+    <table id="base">
+        <thead>
+            <tr>
+                <th>Opta</th>
+                <th>duntiatin</th>
+                <th>explaborpor</th>
+                <th>autatur</th>
+                <th>esto</th>
+                <th>blacietur</th>
+                <th>autet</th>
+                <th>libus</th>
+                <th>ducillam</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>first</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>second</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>third</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>fourth</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
+        </tbody>
+    </table>
+    <pre>$('#table').flextable();</pre>
+        <h2>Parent width related</h2>
+        <div style="width: 80%; border: 2px dotted rgb(255, 0, 0);">
+        <table id="parent">
+            <thead>
+                <tr>
+                    <th>Opta</th>
+                    <th>duntiatin</th>
+                    <th>explaborpor</th>
+                    <th>autatur</th>
+                    <th>esto</th>
+                    <th>blacietur</th>
+                    <th>autet</th>
+                    <th>libus</th>
+                    <th>ducillam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>first</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>second</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>third</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>fourth</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+<pre></pre>
+        <h2>Window width (with setup value)</h2>
+        <p>Calculates table when window is smaller than <em>800px</em> even table would fit.</p>
+        <table id="window">
+            <thead>
+                <tr>
+                    <th>Opta</th>
+                    <th>duntiatin</th>
+                    <th>explaborpor</th>
+                    <th>autatur</th>
+                    <th>esto</th>
+                    <th>blacietur</th>
+                    <th>autet</th>
+                    <th>libus</th>
+                    <th>ducillam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>first</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>second</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>third</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>fourth</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+            </tbody>
+        </table>
+<pre>$('#window').flextable({
+    bt: 'window',
+    bw: 800
+    });</pre>
+         <h2>Calculates only on load</h2>
+        <table id="load" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Opta</th>
+                    <th>duntiatin</th>
+                    <th>explaborpor</th>
+                    <th>autatur</th>
+                    <th>esto</th>
+                    <th>blacietur</th>
+                    <th>autet</th>
+                    <th>libus</th>
+                    <th>ducillam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>first</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>second</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>third</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>fourth</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+            </tbody>
+        </table>
+<pre></pre>
+        <h2>Table without &lt;thead&gt; and &lt;tbody&gt;</h2>
+        <table id="oldstyle">
+                <tr class='tablehead'>
+                    <td class='tablehead'>Opta</td>
+                    <td class='tablehead'>duntiatin</td>
+                    <td class='tablehead'>explaborpor</td>
+                    <td class='tablehead'>autatur</td>
+                    <td class='tablehead'>esto</td>
+                    <td class='tablehead'>blacietur</td>
+                    <td class='tablehead'>autet</td>
+                    <td class='tablehead'>libus</td>
+                    <td class='tablehead'>ducillam</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>first</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>second</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>third</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+                <tr>
+                    <td>this</td>
+                    <td>is</td>
+                    <td>the</td>
+                    <td>fourth</td>
+                    <td>row</td>
+                    <td>of</td>
+                    <td>this</td>
+                    <td>test</td>
+                    <td>table</td>
+                </tr>
+            </tbody>
+        </table>
+<pre></pre>
+        
+        <script language='JavaScript' type='text/javascript'>
+
+        $(document).ready(function() {
+            
+            $('#base').flextable();
+            
+            $('#parent').flextable({
+                bt: 'parent'
+                });
+            
+            $('#window').flextable({
+                bt: 'window',
+                bw: 800
+                });
+            
+            $('#load').flextable({
+                cm: 'load'
+                });
+            
+            $('#oldstyle').flextable({
+                bt: 'window',
+                bw: 800,
+                pcell: '.tablehead',
+                });
+            
+            });
+            
+        </script>
+    </body>
+</html>
+
