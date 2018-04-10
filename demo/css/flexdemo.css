@@ -1,21 +1,37 @@
+/*
+ * jQuery FlexTable v1.1.2 Demo CSS
+ * https://github.com/covistefan/flextable/
+ *
+ * Copyright 2018 COVI.DE (https://www.covi.de)
+ * Lastchange 2018-04-10
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Stefan Händler (https://github.com/covistefan/)
+ * 
+ */
+
 * { font-family: 'Source Sans Pro'; font-weight: 300; font-size: 16px; }
+h1 { font-size: 2.2em; color: rgb(80, 90, 100); font-weight: 600; }
+h2 { font-size: 1.8em; color: rgb(80, 90, 100); font-weight: 600; }
+pre { border: 1px solid #999999; padding: 10px; border-radius: 4px; background-color: #eeeeee; font-family: monospace; font-size: 0.9em; color: rgb(80, 90, 100); }
+
 table { border-collapse: collapse; background: rgba(0, 0, 0, 0.1); }
 thead { background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); font-weight: 400; text-shadow: 1px 1px 0px rgba(96, 101, 111, 0.75); }
 th { padding: 5px 30px 5px 30px; border: 1px solid rgb(96, 101, 111); }
 tbody {}
 td { padding: 5px 20px 5px 5px; border: 1px solid rgba(96, 101, 111, 0.4); }
-h2 { font-size: 2em; color: rgb(80, 90, 100); font-weight: 600; }
-pre { border: 1px solid #999999; padding: 10px; border-radius: 4px; background-color: #eeeeee; font-family: monospace; font-size: 0.9em; color: rgb(80, 90, 100); }
+
+.demo p { font-weight: 600; }
 
 ul.flextable-list { width: 100%; list-style-type: none; padding-left: 0px; }
 ul.flextable-list li.flextable-head { padding: 5px; background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); }
 ul.flextable-list li.flextable-data { padding: 5px; color: rgb(96, 101, 111); }
 
 ul.flextable-list li.flextable-row { clear: both; float: none; border-bottom: 1px solid rgb(255,255,255); }
-ul.flextable-list li.flextable-row ul { list-style-type: none; padding-left: 0px; }
-ul.flextable-list li.flextable-row ul li.flextable-head { width: 33%; padding: 5px; margin-right: 2%; background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); float: left; }
-ul.flextable-list li.flextable-row ul li.flextable-data { width: 65%; padding: 5px; color: rgb(96, 101, 111); }
-
+ul.flextable-list li.flextable-row ul.flextable-set { list-style-type: none; padding-left: 0px; }
+ul.flextable-list li.flextable-row ul.flextable-set li.flextable-head { width: 33%; padding: 5px; margin-right: 2%; background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); float: left; }
+ul.flextable-list li.flextable-row ul.flextable-set li.flextable-data { width: 65%; padding: 5px; color: rgb(96, 101, 111); }
 
 table#options { background: rgb(255,255,255); }
 table#options th { padding: 5px 5px 5px; }
