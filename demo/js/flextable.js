@@ -1,13 +1,13 @@
 /*
- * jQuery FlexTable v1.1.0
- * https://www.covi.de/jquery/flextable
+ * jQuery FlexTable v1.1.2
+ * https://github.com/covistefan/flextable/
  *
- * Copyright 2018 COVI.DE
- * Date 2018-04-09
+ * Copyright 2018 COVI.DE (https://www.covi.de)
+ * Lastchange 2018-04-10
  * Free to use under the GPLv2 and later license.
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Contributing author: Stefan Händler (@appleuser)
+ * Contributing author: Stefan Händler (https://github.com/covistefan/)
  * 
  */
 
@@ -50,8 +50,8 @@ function flexTable(tableData, dataOptions) {
         if (headCount==0) {
             // search for defined heading cells
             if (dataOptions.hcell!=''){
-                tableData.find(dataOptions.hcell).parent().attr('flextable', 'header');
-                tableData.find(dataOptions.hcell).each (function() {
+                tableData.find('td' + dataOptions.hcell).parent().attr('flextable', 'header');
+                tableData.find('td' + dataOptions.hcell).each (function() {
                     headData.push(this.innerHTML);
                     // adding attr to holding element to prevent later data usage
                 });
@@ -71,12 +71,14 @@ function flexTable(tableData, dataOptions) {
         if (dataOptions.debug) { console.log('header cell count: ' + headCount); }
         
         // running all rows (except the marked header cells
-        cellData = new Array(); var cr = 0;
+        cellData = new Array(); cellClass = new Array(); var cr = 0;
         tableData.find('tr').each (function(r) {
             if ($(this).attr('flextable')!='header') {
                 cellData[cr] = new Array();
+                cellClass[cr] = new Array();
                 $(this).children('td').each (function(c) {
                     cellData[cr].push(this.innerHTML);
+                    cellClass[cr].push(this.className);
                 });
                 cr++;
             }
@@ -91,21 +93,19 @@ function flexTable(tableData, dataOptions) {
             for (var c = 0; c<cellData[r].length; c++) {
                 if (dataOptions.header=='after') {
                     var li = "<li class='flextable-data'>" + cellData[r][c] + "</li><li class='flextable-head'>" + headData[c] + "</li>";
-                    if (dataOptions.combine) { li = "<li class='flextable-row'><ul>" + li + "</ul></li>"; }
+                    if (dataOptions.combine) { li = "<li class='flextable-row'><ul class='flextable-set'>" + li + "</ul></li>"; }
                     ul.append(li);
                 }
                 else if (dataOptions.header=='none') {
                     ul.append("<li class='flextable-data'>" + cellData[r][c] + "</li>");
                 }
                 else {
-                    var li = "<li class='flextable-head'>" + headData[c] + "</li><li class='flextable-data'>" + cellData[r][c] + "</li>";
-                    if (dataOptions.combine) { li = "<li class='flextable-row'><ul>" + li + "</ul></li>"; }
+                    var li = "<li class='flextable-head'>" + headData[c] + "</li><li class='flextable-data " + cellClass[r][c] + "'>" + cellData[r][c] + "</li>";
+                    if (dataOptions.combine) { li = "<li class='flextable-row'><ul class='flextable-set'>" + li + "</ul></li>"; }
                     ul.append(li);
                 }
             }
-            
-            
-            
+            ul.append("<li class='flextable-spacer'></li>");
         }
         // inserting ul after table in DOM
         tableData.after(ul);
@@ -121,10 +121,13 @@ function flexTable(tableData, dataOptions) {
         $this.each(function(index){
             opts.display = $(this).css('display');
             if (opts.cm=='auto' || opts.cm=='resize') {
+                var width = $(window).width();
                 $(window).on('resize', function() {
-                    flexTable($this, opts);
-                    });
-                }
+                    if ($(window).width()!=width) {
+                        flexTable($this, opts);
+                    }
+                });
+            }
             flexTable($this, opts);
         });
     });
@@ -135,9 +138,10 @@ $.fn.flextable.defaults = {
 	bt: 'parent', // BreakType 'parent' » parent element width, 'window' » based on window width
 	bw: 768, // BreakWidth int » only with bt: 'window', if window width is lower then bw
 	cm: 'auto', // CalcMode 'auto' » on load and on resize, 'load' » only on load
-    hparent: '', // selector of parent holding header cells to get tablehead if not defined by thead » used if thead not found AND hcell is empty 
-    hcell: '', // selector of cells to get tablehead if not defined by thead » used if thead not found 
-    header: 'before', // showing tablehead information 'before' » add li with header data before data cell, 'after' » add li with header data after data cell, 'none' » ignore header data
-    combine: false // display data as simple list, true » create a '<li><ul><li header></li><li data></li></ul></li>' set if header is included
-    };
+	hparent: '', // selector of parent holding header cells to get tablehead if not defined by thead » used if thead not found AND hcell is empty 
+	hcell: '', // selector of cells to get tablehead if not defined by thead » used if thead not found 
+	header: 'before', // showing tablehead information 'before' » add li with header data before data cell, 'after' » add li with header data after data cell, 'none' » ignore header data
+	combine: false // display data as simple list, true » create a '<li><ul><li header></li><li data></li></ul></li>' set if header is included
+	};
+	
 })(jQuery)
