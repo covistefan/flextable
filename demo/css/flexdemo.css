@@ -1,8 +1,24 @@
 * { font-family: 'Source Sans Pro'; font-weight: 300; font-size: 16px; }
-table { border-collapse: collapse; background: rgba(255, 0, 0, 0.2); }
+table { border-collapse: collapse; background: rgba(0, 0, 0, 0.1); }
 thead { background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); font-weight: 400; text-shadow: 1px 1px 0px rgba(96, 101, 111, 0.75); }
-th { padding: 5px 20px 5px 5px; border: 1px solid rgb(96, 101, 111); }
+th { padding: 5px 30px 5px 30px; border: 1px solid rgb(96, 101, 111); }
 tbody {}
 td { padding: 5px 20px 5px 5px; border: 1px solid rgba(96, 101, 111, 0.4); }
 h2 { font-size: 2em; color: rgb(80, 90, 100); font-weight: 600; }
 pre { border: 1px solid #999999; padding: 10px; border-radius: 4px; background-color: #eeeeee; font-family: monospace; font-size: 0.9em; color: rgb(80, 90, 100); }
+
+ul.flextable-list { width: 100%; list-style-type: none; padding-left: 0px; }
+ul.flextable-list li.flextable-head { padding: 5px; background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); }
+ul.flextable-list li.flextable-data { padding: 5px; color: rgb(96, 101, 111); }
+
+ul.flextable-list li.flextable-row { clear: both; float: none; border-bottom: 1px solid rgb(255,255,255); }
+ul.flextable-list li.flextable-row ul { list-style-type: none; padding-left: 0px; }
+ul.flextable-list li.flextable-row ul li.flextable-head { width: 33%; padding: 5px; margin-right: 2%; background-color: rgba(96, 101, 111, 0.75); color: rgb(255,255,255); float: left; }
+ul.flextable-list li.flextable-row ul li.flextable-data { width: 65%; padding: 5px; color: rgb(96, 101, 111); }
+
+
+table#options { background: rgb(255,255,255); }
+table#options th { padding: 5px 5px 5px; }
+table#options td { padding: 5px 5px 5px; }
+table#options td pre { margin: 0px; }
+table#options td strong { font-weight: 600; }
