@@ -1,4 +1,4 @@
-# flextable v1.1.0
+# flextable v1.1.2
 A jQuery-Plugin to dynamically create lists from tables
 
 ## How to use
