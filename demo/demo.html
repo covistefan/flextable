@@ -10,7 +10,8 @@
         <link href="./css/flexdemo.css" rel="stylesheet" />
     </head>
     <body>
-
+        <h1>flextable jQuery Plugin</h1>
+        <p>Change window size to see, how it works</p>
         <h2>Base Usage</h2>
     <table id="base">
         <thead>
@@ -52,6 +53,29 @@
         </tbody>
     </table>
     <pre>$('#table').flextable();</pre>
+        <h2>HTML Content Demo</h2>
+        <p>All content </p>
+    <table id="html">
+        <thead>
+            <tr>
+                <th><span style="font-weight: 600;">Opta</span></th>
+                <th><span style="color: orange;">duntiatin</span></th>
+                <th><span style="font-style: italic">explaborpor</span></th>
+                <th><span style="text-transform: uppercase;">autatur</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" style="max-width: 100%; padding: 4px;" value="demo-input" /></td>
+                <td><ul><li>list</li><li>item</li></ul></td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Katze_weiss.png" style="width: 200px; border: 1px solid black;" /></td>
+                <td class='demo'><p>Paragraph in cell with class</p></td>
+            </tr>
+        </tbody>
+    </table>
+    <pre>$('#html').flextable();</pre>
+        
+        
         <h2>Combined option</h2>
         <p>This demo breaks earlier then the demo above because the red marked parent container has only 80% of window width</p>
         <div style="width: 80%; border: 2px dotted rgb(255, 0, 0);">
@@ -100,7 +124,7 @@
 });</pre>
         <h2>Window width (with setup value)</h2>
         <p>Calculates table when window is smaller than <em>800px</em> even table would fit.</p>
-        <table id="window" style="width: 100%;">
+        <table id="window">
             <thead>
                 <tr>
                     <th>Opta</th>
@@ -109,9 +133,6 @@
                     <th>autatur</th>
                     <th>esto</th>
                     <th>blacietur</th>
-                    <th>autet</th>
-                    <th>libus</th>
-                    <th>ducillam</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,9 +143,6 @@
                     <td>first</td>
                     <td>row</td>
                     <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
                 </tr>
                 <tr>
                     <td>this</td>
@@ -133,9 +151,6 @@
                     <td>second</td>
                     <td>row</td>
                     <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
                 </tr>
             </tbody>
         </table>
@@ -144,7 +159,7 @@
     bw: 800
     });</pre>
          <h2>Calculates only on load</h2>
-        <table id="load" style="width: 100%;">
+        <table id="load">
             <thead>
                 <tr>
                     <th>Opta</th>
@@ -184,68 +199,47 @@
             </tbody>
         </table>
 <pre>$('#load').flextable({
-    cm: load,
+    cm: 'load',
     });</pre>
         <h2>Table without &lt;thead&gt; and &lt;tbody&gt;</h2>
         <table id="oldstyle">
-                <tr class='tablehead'>
-                    <td class='tablehead'>Opta</td>
-                    <td class='tablehead'>duntiatin</td>
-                    <td class='tablehead'>explaborpor</td>
-                    <td class='tablehead'>autatur</td>
-                    <td class='tablehead'>esto</td>
-                    <td class='tablehead'>blacietur</td>
-                    <td class='tablehead'>autet</td>
-                    <td class='tablehead'>libus</td>
-                    <td class='tablehead'>ducillam</td>
-                </tr>
-                <tr>
-                    <td>this</td>
-                    <td>is</td>
-                    <td>the</td>
-                    <td>first</td>
-                    <td>row</td>
-                    <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
-                </tr>
-                <tr>
-                    <td>this</td>
-                    <td>is</td>
-                    <td>the</td>
-                    <td>second</td>
-                    <td>row</td>
-                    <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
-                </tr>
-                <tr>
-                    <td>this</td>
-                    <td>is</td>
-                    <td>the</td>
-                    <td>third</td>
-                    <td>row</td>
-                    <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
-                </tr>
-                <tr>
-                    <td>this</td>
-                    <td>is</td>
-                    <td>the</td>
-                    <td>fourth</td>
-                    <td>row</td>
-                    <td>of</td>
-                    <td>this</td>
-                    <td>test</td>
-                    <td>table</td>
-                </tr>
-            </tbody>
+            <tr class='tablehead'>
+                <td class='tablehead'>Opta</td>
+                <td class='tablehead'>duntiatin</td>
+                <td class='tablehead'>explaborpor</td>
+                <td class='tablehead'>autatur</td>
+                <td class='tablehead'>esto</td>
+                <td class='tablehead'>blacietur</td>
+                <td class='tablehead'>autet</td>
+                <td class='tablehead'>libus</td>
+                <td class='tablehead'>ducillam</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>first</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>is</td>
+                <td>the</td>
+                <td>second</td>
+                <td>row</td>
+                <td>of</td>
+                <td>this</td>
+                <td>test</td>
+                <td>table</td>
+            </tr>
         </table>
-<pre></pre>
+<pre>$('#oldstyle').flextable({
+    hcell: '.tablehead',
+    });</pre>
     <h2>Options</h2>
     <table id="options">
         <thead>
@@ -312,6 +306,7 @@
         $(document).ready(function() {
             
             $('#base').flextable();
+            $('#html').flextable();
             
             $('#parent').flextable({
                 combine: true,
@@ -331,9 +326,8 @@
                 });
             
             $('#oldstyle').flextable({
-                bt: 'window',
-                bw: 800,
-                pcell: '.tablehead',
+                hcell: '.tablehead',
+                debug: true,
                 });
             
             });
@@ -341,4 +335,3 @@
         </script>
     </body>
 </html>
-
