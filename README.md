@@ -65,4 +65,4 @@ $(document).ready(function() {
   <li class='flextable-head'>table</li>
   <li class='flextable-data'>table</li>
 </ul>
-
+```
